@@ -1,57 +1,28 @@
-# Webpack starter kit &middot; [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
+Є масив кольорів в hex-форматі і кнопки Start і Stop.
 
-## Developing
+<button type="button" data-action="start">Start</button>
+<button type="button" data-action="stop">Stop</button>
+const colors = [
+  '#FFFFFF',
+  '#2196F3',
+  '#4CAF50',
+  '#FF9800',
+  '#009688',
+  '#795548',
+];
+Напиши скрипт, який після натискання кнопки Start, раз в секунду змінює колір фону body на випадкове значення з масиву використовуючи інлайн-стиль. При натисканні на кнопку Stop, зміна кольору фону повинна зупинятися.
 
-### Prerequisites
+⚠️ Врахуй, на кнопку Start можна натиснути нескінченну кількість разів. Зроби так, щоб поки зміна теми запушено, кнопка Start була не активна.
 
-Для корректной работы SASS-компилятора и других инструментов, необходимо один
-раз глобально поставить дополнительные пакеты, выполнив в терминале следующие
-команды. Пользователям MacOS ничего делать не нужно.
+Для генерації випадкового числа (індекс елемента масиву квітів), використовуй функцію randomIntegerFromInterval.
 
-Пользователям **Windows**, в режиме администратора.
-[Как запусттить Powershell](https://youtu.be/p2tFnxcymwk) в режиме
-администратора.
+const randomIntegerFromInterval = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
 
-```shell
-npm install --global --production windows-build-tools
-```
 
-Вот как выглядит процесс успешной установки для пользователей **Windows**.
 
-![Установка windows-build-tools](https://user-images.githubusercontent.com/1426799/45007904-bde9f280-afb4-11e8-8a35-c77dffaffa2a.gif)
 
-Пользователям **Linux**.
-
-```shell
-sudo apt-get install gcc g++ make
-```
-
-### Setting up Dev
-
-Для быстрого старта необходимо склонировать репозиторий.
-
-```shell
-git clone https://github.com/luxplanjay/webpack-starter-kit.git
-```
-
-Переименовать папку сборки именем вашего проекта.
-
-```shell
-mv webpack-starter-kit имя_проекта
-```
-
-Затем перейти в папку проекта.
-
-```shell
-cd имя_проекта
-```
-
-Находясь в папке проекта удалить папку `.git` связанную с репозиторием сборки
-выполнив следующую команду.
-
-```shell
-npx rimraf .git
-```
 
 Установить все зависимости.
 
